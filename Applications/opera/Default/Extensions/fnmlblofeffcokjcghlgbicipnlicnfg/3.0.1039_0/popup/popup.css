@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+html,body
+{
+	border:0;
+	margin:0;
+	padding:0;
+	color:white;
+	font-family:"Noto Sans", Arial, sans-serif;
+	font-size:12px;
+	height:100%;
+	background-color:#22374e;
+}
+a, a:visited
+{
+	color:white;
+}
+.noMarge
+{
+	margin:0;
+}
+.center
+{
+	text-align:center;
+}
+.dNone
+{
+	display:none;
+}
+.dBlock
+{
+	display:block;
+}
+.vAlignBot
+{
+	vertical-align:bottom;
+}
+.vAlignSub
+{
+	vertical-align:sub;
+}
+.clickable
+{
+	cursor:pointer;
+}
+.paperButton
+{
+	padding:10px;
+	cursor:pointer;
+	background:#171a21;
+	width:max-content;
+	margin:10px auto;
+	border-radius:3px;
+	transition:all 0.1s linear 0s;
+	box-shadow:0 2px 2px 0 rgb(0 0 0 / 14%),0 1px 5px 0 rgb(0 0 0 / 12%),0 3px 1px -2px rgb(0 0 0 / 20%);
+}
+.paperButton:hover
+{
+	background:#52c3f3;
+	box-shadow:0 2px 2px 0 rgb(255 255 255 / 14%),0 1px 5px 0 rgb(255 255 255 / 12%),0 3px 1px -2px rgb(255 255 255 / 20%);
+}
+.tabContainer
+{
+	padding:10px;
+	min-height:230px;
+	min-width:700px;
+	background-color:#22374e;
+}
+.flexVSpacedAround
+{
+	display:flex;
+	justify-content:space-around;
+}
+#banner
+{
+	background-color:#171a21;
+	padding:6px 10px;
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+}
+#banner .bt
+{
+	padding:5px;
+}
+#banner h2 img
+{
+	height:20px;
+	vertical-align:sub;
+	padding-bottom:2px;
+}
+#banner h2 span
+{
+	vertical-align:top
+}
+#banner>.bt
+{
+	cursor:pointer;
+	border-bottom:1px solid transparent;
+}
+#banner .borderBt
+{
+	height:1px;
+	background:transparent;
+	box-shadow:0 0 0px #52c3f3;
+	transition:all 0.3s linear 0s;
+}
+#banner>.bt:hover .borderBt
+{
+	background:#52c3f3;
+	box-shadow:0 0 3px #52c3f3;
+}
+#banner>.bt.active .borderBt
+{
+	background:linear-gradient(to right,#52c3f3,#0f141c);
+	box-shadow:0 0 0 #52c3f3;
+}
+#bannerBorder
+{
+	background:linear-gradient(to right,#52c3f3,#0f141c);
+	height:2px;
+}
+#listMerchantsTitle
+{
+	margin:10px 0;
+	text-align:center;
+}
+input[type="checkbox"]
+{
+	cursor:pointer;
+}
+.listContainer
+{
+	margin-bottom:20px;
+	display:flex;
+	flex-direction:column;
+	flex-wrap:wrap;
+	max-height:210px;
+}
+.listContainer div
+{
+	width:33%;
+	margin:0 10px;
+	padding:2px 1px 2px 1px;
+}
+.listContainer header
+{
+	width:30%;
+	margin:0 10px;
+}
+.listContainer div:hover
+{
+	background-color:rgb(43,68,95);
+}
+.listContainer span
+{
+	margin-left:5px;
+	vertical-align:baseline;
+}
+.listContainer img
+{
+	margin:0px 0 -2px 5px
+}
+.tabContainer
+{
+	display:none;
+}
+.tabContainer.tabOpen
+{
+	display:block;
+}
+#open_mode,#display_always
+{
+	cursor:pointer;
+	vertical-align:middle;
+}
+.openLink
+{
+	font-size:9px;
+	text-decoration:none;
+	display:inline-block;
+	vertical-align:text-bottom;
+	margin-left:3px;
+	padding:3px;
+}
+.openLink:hover
+{
+	background:rgba(255,255,255,0.1);
+}
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+#voucherSelection
+{
+	text-align:center;
+	font-size:16px;
+	font-family:'Bebas Neue',roboto,monospace!important;
+}
+#vouchersList>div
+{
+	text-align:center;
+	min-width:110px;
+	margin:5px 0;
+	padding:5px;
+	border-radius:0;
+	background:#171a21;
+	display:inline-block;
+	padding:10px;
+	border-radius:3px;
+}
+#vouchersList>div.voucher span:first-child
+{
+	flex:1 1 auto;
+}
+#vouchersList>div.voucher
+{
+	cursor:pointer;
+}
+#vouchersList>div:hover
+{
+	background:#52c3f3;
+}
+/*#vouchersList
+{
+	display:flex;
+	flex-direction:column;
+}
+#vouchersList>div
+{
+	display:flex;
+	margin-bottom:5px;
+	cursor:pointer;
+	transition:background 0.1s linear 0s;
+}
+#vouchersList>div.voucherFailed
+{
+	text-decoration:line-through;
+	background:rgba(250,0,0,0.1);
+}
+#vouchersList>div.voucherFailed:hover
+{
+	text-decoration:line-through;
+	background:rgba(250,100,100,0.2);
+}
+#vouchersList>div.voucherSuccess
+{
+	background:rgba(0,250,0,0.1);
+}
+#vouchersList>div.voucherSuccess:hover
+{
+	background:rgba(100,250,100,0.2);
+}
+#vouchersList>div.voucherPending
+{
+	background:#806115;
+}
+#vouchersList>div.voucherPending:hover
+{
+	background:#D4B66A;
+}
+#vouchersList>div>span
+{
+	flex:1 1 auto;
+	max-width:50%;
+	padding:5px;
+    box-sizing:border-box;
+}
+#vouchersList>div>span:first-child
+{
+	text-align:right;
+}*/
+form#bug_report>div:first-of-type
+{
+	margin:0 auto;
+	width:70%;
+	display:flex;
+	justify-content:space-around;
+}
+form#bug_report>div:first-of-type>div:last-of-type
+{
+	width:100%;
+	flex-direction:column;
+}
+form#bug_report>div:first-of-type>div:first-of-type
+{
+	padding:0 15px;
+	text-align:right;
+	min-width:70px;
+}
+form#bug_report>div:first-of-type>div:first-of-type>div
+{
+	padding:6px 0;
+	margin-bottom:10px;
+}
+form#bug_report>div:first-of-type>div:last-of-type>input
+{
+	width:100%;
+	padding:5px;
+	border-radius:5px;
+	margin-bottom:10px;
+}
+form#bug_report textarea
+{
+	width:100%;
+	border-radius:5px;
+	padding:5px;
+	margin-bottom:10px;
+}
+form#bug_report button
+{
+	margin:0 auto;
+	display:block;
+	padding:5px 10px;
+}
+.loader {
+	margin:50px auto 0px auto;
+	border:16px solid #f3f3f3; /* Light grey */
+	border-top:16px solid #52c3f3; /* Blue */
+	border-radius:50%;
+	width:60px;
+	height:60px;
+	animation:spin 2s linear infinite;
+}
+@keyframes spin {
+	0% { transform:rotate(0deg);border-top:16px solid #52c3f3; }
+	30% { border-top:16px solid #22374e;box-shadow:0 0 50px rgba(0,0,0,0.5); }
+	40% { border-top:16px solid #22374e; }
+	100% { transform:rotate(360deg);border-top:16px solid #52c3f3; }
+}
+#include_screenshot
+{
+	margin:10px 0;
+	text-align:center;
+}
+#justAMessageDialog
+{
+	text-align:center;
+	background:#22374e;
+}
+#justAMessageDialog
+{
+	color:white;
+}
+hr
+{
+	width:50%;
+	border-color:rgba(0,0,0,0.1);
+}
+dialog.polyfilled:not([open])
+{
+	display:none;
+}
+dialog.polyfilled
+{
+	box-shadow:0 0 100vw 100vw black;
+	position:absolute;
+	left:0; right:0;
+	width:-moz-fit-content;
+	width:-webkit-fit-content;
+	width:fit-content;
+	height:-moz-fit-content;
+	height:-webkit-fit-content;
+	height:fit-content;
+	margin:auto;
+	border:solid;
+	padding:1em;
+	background:white;
+	color:black;
+	display:block;
+}
+dialog.polyfilled
+{
+	z-index:2147483647!important;
+	position:fixed;
+	top:50%;
+	transform:translate(0, -50%);
+}

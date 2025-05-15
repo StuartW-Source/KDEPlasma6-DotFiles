@@ -1,0 +1,13 @@
+2025/05/06-21:50:13.096 119b6 Reusing MANIFEST /home/stuart/.config/opera/Default/IndexedDB/https_html5test.opensuse.org_0.indexeddb.leveldb/MANIFEST-000001
+2025/05/06-21:50:13.096 119b6 Recovering log #7
+2025/05/06-21:50:13.096 119b6 Reusing old log /home/stuart/.config/opera/Default/IndexedDB/https_html5test.opensuse.org_0.indexeddb.leveldb/000007.log 
+2025/05/06-21:50:13.111 119b7 Level-0 table #11: started
+2025/05/06-21:50:13.112 119b7 Level-0 table #11: 1633 bytes OK
+2025/05/06-21:50:13.116 119b7 Delete type=0 #7
+2025/05/06-21:50:13.116 119b7 Manual compaction at level-0 from '\x00\x03\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x04\x00\x00\x00' @ 0 : 0; will stop at '\x00\x03\x01\x03\x01\x03\x00k\x00e\x00y' @ 281 : 1
+2025/05/06-21:50:13.116 119b7 Compacting 1@0 + 1@1 files
+2025/05/06-21:50:13.118 119b7 Generated table #12@0: 35 keys, 659 bytes
+2025/05/06-21:50:13.118 119b7 Compacted 1@0 + 1@1 files => 659 bytes
+2025/05/06-21:50:13.122 119b7 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/05/06-21:50:13.122 119b7 Delete type=2 #11
+2025/05/06-21:50:13.122 119b7 Manual compaction at level-0 from '\x00\x03\x01\x03\x01\x03\x00k\x00e\x00y' @ 281 : 1 .. '\x00\x04\x00\x00\x00' @ 0 : 0; will stop at (end)

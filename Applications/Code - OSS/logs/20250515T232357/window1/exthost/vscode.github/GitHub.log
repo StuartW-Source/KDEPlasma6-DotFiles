@@ -1,0 +1,4 @@
+2025-05-15 23:23:59.377 [info] Log level: Info
+2025-05-15 23:31:29.990 [info] Log level: Info
+2025-05-15 23:32:23.144 [warning] [GitHubSourceControlHistoryItemDetailsProvider][_getCommitAuthor] Failed to get commit author for StuartW-Source/KDEPlasma6-DotFiles/d28f29a24bc9297bc3ac03a9e94f718fa37d7329: TypeError: Cannot read properties of null (reading 'author')
+2025-05-15 23:35:25.256 [info] Log level: Info

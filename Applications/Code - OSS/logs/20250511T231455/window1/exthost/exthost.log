@@ -1,0 +1,18 @@
+2025-05-11 23:14:56.413 [info] Extension host with pid 46375 started
+2025-05-11 23:14:56.413 [info] Skipping acquiring lock for /home/stuart/.config/Code - OSS/User/workspaceStorage/65d238d1093bca546b89a70d330a56c9.
+2025-05-11 23:14:56.588 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-05-11 23:14:56.631 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-05-11 23:14:56.638 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-05-11 23:14:56.693 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-05-11 23:14:56.953 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-05-11 23:14:56.966 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-05-11 23:14:57.009 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-05-11 23:14:57.062 [info] Eager extensions activated
+2025-05-11 23:14:57.078 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-05-11 23:14:57.080 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-05-11 23:14:57.317 [warning] [Decorations] CAPPING events from decorations provider vscode.git 404
+2025-05-11 23:14:57.486 [warning] [Decorations] CAPPING events from decorations provider vscode.git 404
+2025-05-11 23:14:57.554 [warning] [Decorations] CAPPING events from decorations provider vscode.git 404
+2025-05-11 23:20:34.104 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-05-11 23:23:58.485 [info] Extension host terminating: renderer closed the MessagePort
+2025-05-11 23:23:58.496 [info] Extension host with pid 46375 exiting with code 0

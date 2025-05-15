@@ -1,0 +1,216 @@
+{
+   "background": {
+      "scripts": [ "sw.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "128": "images/icon128.jpg",
+         "16": "images/icon16.jpg",
+         "48": "images/icon48.jpg"
+      },
+      "default_popup": "popup/popup.html"
+   },
+   "content_scripts": [ {
+      "all_frames": false,
+      "js": [ "merchants/2game.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.2game.com/*", "https://*.2game.hk/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/allyouplay.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.allyouplay.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/amazon.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://www.amazon.fr/*", "https://www.amazon.es/*", "https://www.amazon.de/*", "https://www.amazon.it/*", "https://www.amazon.nl/*", "https://www.amazon.co.uk/*", "https://www.amazon.ca/*", "https://www.amazon.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/buygames.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.buygames.ps/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/eneba.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.eneba.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/epicgames.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.epicgames.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/g2a.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.g2a.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/g2play.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.g2play.net/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/gamebillet.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.gamebillet.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "images/aks-logo-dark.js", "merchants/gameblog.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.gameblog.fr/jeux/*", "https://*.gameblog.fr/jeu-video/jeux/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/gamekult.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.gamekult.com/jeux/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/gamersgate.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.gamersgate.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/gamesforplay.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.gamesforplay.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/gamesplanet.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.gamesplanet.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/gamespot.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.gamespot.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/gamivo.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.gamivo.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/gocdkeys.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.gocdkeys.com/*", "https://*.gocdkeys.it/*", "https://*.gocdkeys.pt/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/gog.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.gog.com/game/*", "https://*.gog.com/*/game/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/greenmangaming.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.greenmangaming.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/gvgmall.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.gvgmall.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/hrk.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.hrkgame.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/humblebundle.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.humblebundle.com/store/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/instantgaming.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.instant-gaming.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "images/aks-icon-dark.js", "merchants/jeuxvideocom.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.jeuxvideo.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/k4g.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://k4g.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/kinguin.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.kinguin.net/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/microsoftstore.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.microsoft.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/nintendo.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.nintendo.be/*", "https://*.nintendo.de/*", "https://*.nintendo.es/*", "https://*.nintendo.fr/*", "https://*.nintendo.it/*", "https://*.nintendo.nl/*", "https://*.nintendo.at/*", "https://*.nintendo.pt/*", "https://*.nintendo.ru/*", "https://*.nintendo.ch/*", "https://*.nintendo.co.za/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/nintendo_uk.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.nintendo.co.uk/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/nintendo_us.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.nintendo.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/origin.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.origin.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/pixelcodes.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://pixelcodes.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/playstation.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://store.playstation.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/premiumcdkeys.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.premiumcdkeys.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/punktid.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.punktid.com/*", "https://*.punktid.ee/*", "https://*.punktid.fi/*", "https://*.punktid.lv/*", "https://*.punktid.lt/*", "https://*.punktid.ru/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/royalcdkeys.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.royalcdkeys.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/scdkey.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.scdkey.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/steam.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://store.steampowered.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "images/aks-logo-dark.js", "merchants/twitch.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.twitch.tv/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/ubisoft.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://store.ubi.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/voidu.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.voidu.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/xbox.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://*.xbox.com/*" ]
+   }, {
+      "all_frames": false,
+      "js": [ "merchants/youtube.js", "modal.js", "currency.js", "purify.min.js", "vouchers.js", "translates.js", "injector.js" ],
+      "matches": [ "https://www.youtube.com/*" ]
+   }, {
+      "js": [ "allkeyshop.js" ],
+      "matches": [ "https://www.allkeyshop.com/*" ]
+   }, {
+      "all_frames": true,
+      "js": [ "merchants/gleam.js" ],
+      "matches": [ "https://gleam.io/*" ]
+   }, {
+      "js": [ "not_yet.js" ],
+      "matches": [ "http://*/*", "https://*/*" ]
+   } ],
+   "description": "Shows you the best deals and discount coupons available while you're surfing on the web",
+   "developer": {
+      "name": "allkeyshop"
+   },
+   "icons": {
+      "128": "images/icon128.jpg",
+      "16": "images/icon16.jpg",
+      "48": "images/icon48.jpg"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtd7L9e3BrJqpRhW2U3CYGQp+8nGuaV/473kxK1JR96tA5IjGaXwFl2OyQJegVJUUT8pO73Rm26KOgqwAgCuhbaMsNuvv5iOdiVlTGkmB3PT58tkE3HiVXFkjWaFZWAXI0N6p06m2ZoGz1bTcX/rsk1XEZNVYsS7DwS3szgDGokW5DjBl7c7pWjdtZ8HcZI+gEo0esz65Mk5n4AwQe93gMRSCTK9rlgVxwpr3WqG/191nwSuZTGqfTgq94aXdfACO/Cyvkgi1Mw3x2p+1G9qfV/6epJsiToulYdZzSX8gegiBC4zORjGkKjhToM+FKfDCfGrxchKUo9BSCOD2XQXyvwIDAQAB",
+   "manifest_version": 2,
+   "name": "Allkeyshop - Compare Game Prices",
+   "options_ui": {
+      "open_in_tab": true,
+      "page": "popup/popup.html"
+   },
+   "permissions": [ "activeTab", "storage", "tabs", "\u003Call_urls>" ],
+   "update_url": "https://extension-updates.opera.com/api/omaha/update/",
+   "version": "3.0.1039",
+   "web_accessible_resources": [ "images/vouchers/*.png", "allkeyshop_webkit_inject.js" ]
+}

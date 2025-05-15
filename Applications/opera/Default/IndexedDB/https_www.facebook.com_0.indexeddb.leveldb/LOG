@@ -1,0 +1,18 @@
+2025/05/12-20:51:08.702 f0b Creating DB /home/stuart/.config/opera/Default/IndexedDB/https_www.facebook.com_0.indexeddb.leveldb since it was missing.
+2025/05/12-20:51:08.711 f0b Reusing MANIFEST /home/stuart/.config/opera/Default/IndexedDB/https_www.facebook.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/05/12-20:51:09.248 f0b Level-0 table #5: started
+2025/05/12-20:51:09.251 f0b Level-0 table #5: 12105 bytes OK
+2025/05/12-20:51:09.260 f0b Delete type=0 #3
+2025/05/12-20:51:09.260 f0b Manual compaction at level-0 from '\x00\x07\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x08\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/05/12-20:51:33.360 f0c Level-0 table #7: started
+2025/05/12-20:51:33.365 f0c Level-0 table #7: 189741 bytes OK
+2025/05/12-20:51:33.369 f0c Delete type=0 #4
+2025/05/12-20:51:33.369 f0c Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2025/05/12-20:51:33.369 f0c Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x0e\x00\x00\xc8\x1a\x00u\x00n\x00r\x00e\x00s\x00p\x00o\x00n\x00s\x00i\x00v\x00e\x00n\x00e\x00s\x00s\x00-\x00e\x00v\x00e\x00n\x00t\x00s\x00-\x00v\x002' @ 9829 : 1
+2025/05/12-20:51:33.369 f0c Compacting 1@1 + 1@2 files
+2025/05/12-20:51:33.373 f0c Generated table #8@1: 2369 keys, 95735 bytes
+2025/05/12-20:51:33.373 f0c Compacted 1@1 + 1@2 files => 95735 bytes
+2025/05/12-20:51:33.376 f0c compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/05/12-20:51:33.377 f0c Delete type=2 #5
+2025/05/12-20:51:33.377 f0c Delete type=2 #7
+2025/05/12-20:51:33.377 f0c Manual compaction at level-1 from '\x00\x0e\x00\x00\xc8\x1a\x00u\x00n\x00r\x00e\x00s\x00p\x00o\x00n\x00s\x00i\x00v\x00e\x00n\x00e\x00s\x00s\x00-\x00e\x00v\x00e\x00n\x00t\x00s\x00-\x00v\x002' @ 9829 : 1 .. (end); will stop at (end)

@@ -1,0 +1,1 @@
+/* For avoid a new permission query at each new website managed */

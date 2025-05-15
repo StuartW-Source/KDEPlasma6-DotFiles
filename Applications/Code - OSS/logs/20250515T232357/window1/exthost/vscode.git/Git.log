@@ -1,0 +1,314 @@
+2025-05-15 23:23:59.346 [info] [main] Log level: Info
+2025-05-15 23:23:59.346 [info] [main] Validating found git in: "git"
+2025-05-15 23:23:59.346 [info] [main] Using git "2.49.0" from "git"
+2025-05-15 23:23:59.346 [info] [Model][doInitialScan] Initial repository scan started
+2025-05-15 23:23:59.346 [info] > git rev-parse --show-toplevel [102ms]
+2025-05-15 23:23:59.346 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-15 23:23:59.346 [info] > git rev-parse --show-toplevel [8ms]
+2025-05-15 23:23:59.368 [info] > git rev-parse --git-dir --git-common-dir [10ms]
+2025-05-15 23:23:59.376 [info] [Model][openRepository] Opened repository (path): /home/stuart/Documents/Hyprland-Dotfiles/hyprland-dots
+2025-05-15 23:23:59.376 [info] [Model][openRepository] Opened repository (real path): /home/stuart/Documents/Hyprland-Dotfiles/hyprland-dots
+2025-05-15 23:23:59.389 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-15 23:23:59.389 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-15 23:23:59.390 [info] > git config --get commit.template [8ms]
+2025-05-15 23:23:59.401 [info] > git rev-parse --show-toplevel [6ms]
+2025-05-15 23:23:59.401 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-15 23:23:59.406 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [6ms]
+2025-05-15 23:23:59.407 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-15 23:23:59.407 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-15 23:23:59.420 [info] > git status -z -uall [5ms]
+2025-05-15 23:23:59.420 [info] > git rev-parse --show-toplevel [9ms]
+2025-05-15 23:23:59.420 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-15 23:23:59.425 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [6ms]
+2025-05-15 23:23:59.444 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [6ms]
+2025-05-15 23:23:59.449 [info] > git rev-parse --show-toplevel [24ms]
+2025-05-15 23:23:59.450 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-15 23:23:59.454 [info] > git config --get --local branch.main.vscode-merge-base [5ms]
+2025-05-15 23:23:59.459 [info] > git config --get commit.template [15ms]
+2025-05-15 23:23:59.460 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [1ms]
+2025-05-15 23:23:59.465 [info] > git rev-parse --show-toplevel [11ms]
+2025-05-15 23:23:59.465 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-15 23:23:59.543 [info] > git rev-parse --show-toplevel [70ms]
+2025-05-15 23:23:59.543 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-15 23:23:59.543 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [74ms]
+2025-05-15 23:23:59.543 [info] > git merge-base refs/heads/main refs/remotes/origin/main [79ms]
+2025-05-15 23:23:59.556 [info] > git diff --name-status -z --diff-filter=ADMR 7cbc8937dbe8d8f29fb2891d1e8fe2ad3ef33526...refs/remotes/origin/main [7ms]
+2025-05-15 23:23:59.557 [info] > git rev-parse --show-toplevel [2ms]
+2025-05-15 23:23:59.557 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-15 23:23:59.571 [info] > git status -z -uall [9ms]
+2025-05-15 23:23:59.577 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [11ms]
+2025-05-15 23:23:59.580 [info] > git rev-parse --show-toplevel [11ms]
+2025-05-15 23:23:59.580 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-15 23:23:59.601 [info] > git rev-parse --show-toplevel [4ms]
+2025-05-15 23:23:59.601 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-15 23:23:59.606 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-15 23:23:59.606 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-15 23:23:59.611 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-15 23:23:59.611 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-15 23:23:59.617 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-15 23:23:59.617 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-15 23:23:59.621 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-15 23:23:59.621 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-15 23:23:59.626 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-15 23:23:59.626 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-15 23:23:59.631 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-15 23:23:59.631 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-15 23:23:59.635 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-15 23:23:59.635 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-15 23:23:59.640 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-15 23:23:59.640 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-15 23:23:59.645 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-15 23:23:59.645 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-15 23:23:59.649 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-15 23:23:59.649 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-15 23:23:59.654 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-15 23:23:59.660 [info] > git rev-parse --git-dir --git-common-dir [1ms]
+2025-05-15 23:23:59.663 [info] [Model][openRepository] Opened repository (path): /home/stuart/paru
+2025-05-15 23:23:59.663 [info] [Model][openRepository] Opened repository (real path): /home/stuart/paru
+2025-05-15 23:23:59.672 [info] > git config --get commit.template [5ms]
+2025-05-15 23:23:59.673 [info] > git rev-parse --show-toplevel [2ms]
+2025-05-15 23:23:59.682 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [5ms]
+2025-05-15 23:23:59.686 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/stuart/paru/.git/refs/remotes/origin/master'
+2025-05-15 23:23:59.687 [info] > git rev-parse --git-dir --git-common-dir [5ms]
+2025-05-15 23:23:59.690 [info] [Model][openRepository] Opened repository (path): /home/stuart/yay
+2025-05-15 23:23:59.690 [info] [Model][openRepository] Opened repository (real path): /home/stuart/yay
+2025-05-15 23:23:59.691 [info] [Model][doInitialScan] Initial repository scan completed - repositories (3), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-05-15 23:23:59.696 [info] > git rev-parse refs/remotes/origin/master [10ms]
+2025-05-15 23:23:59.705 [info] > git config --get commit.template [9ms]
+2025-05-15 23:23:59.707 [info] > git status -z -uall [7ms]
+2025-05-15 23:23:59.709 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [5ms]
+2025-05-15 23:23:59.728 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [10ms]
+2025-05-15 23:23:59.763 [info] > git config --get --local branch.master.vscode-merge-base [31ms]
+2025-05-15 23:23:59.769 [info] > git config --get commit.template [41ms]
+2025-05-15 23:23:59.769 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [45ms]
+2025-05-15 23:23:59.809 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/stuart/yay/.git/refs/remotes/origin/master'
+2025-05-15 23:23:59.809 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [40ms]
+2025-05-15 23:23:59.818 [info] > git rev-parse refs/remotes/origin/master [9ms]
+2025-05-15 23:23:59.827 [info] > git status -z -uall [5ms]
+2025-05-15 23:23:59.827 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [9ms]
+2025-05-15 23:23:59.827 [info] > git merge-base refs/heads/master refs/remotes/origin/master [14ms]
+2025-05-15 23:23:59.835 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/stuart/paru/.git/refs/remotes/origin/master'
+2025-05-15 23:23:59.835 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [9ms]
+2025-05-15 23:23:59.847 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [6ms]
+2025-05-15 23:23:59.851 [info] > git rev-parse refs/remotes/origin/master [16ms]
+2025-05-15 23:23:59.858 [info] > git diff --name-status -z --diff-filter=ADMR ae76b1e7afb2f604dc99afe16b01c6c5deeb0db0...refs/remotes/origin/master [27ms]
+2025-05-15 23:23:59.859 [info] > git status -z -uall [5ms]
+2025-05-15 23:23:59.860 [info] > git config --get --local branch.master.vscode-merge-base [9ms]
+2025-05-15 23:23:59.864 [info] > git config --get commit.template [18ms]
+2025-05-15 23:23:59.865 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2025-05-15 23:23:59.873 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [9ms]
+2025-05-15 23:23:59.877 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [5ms]
+2025-05-15 23:23:59.882 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/stuart/yay/.git/refs/remotes/origin/master'
+2025-05-15 23:23:59.883 [info] > git merge-base refs/heads/master refs/remotes/origin/master [6ms]
+2025-05-15 23:23:59.887 [info] > git rev-parse refs/remotes/origin/master [5ms]
+2025-05-15 23:23:59.895 [info] > git status -z -uall [4ms]
+2025-05-15 23:23:59.896 [info] > git diff --name-status -z --diff-filter=ADMR 59714d8ae3dc1e5790228c1faeef8283b0c0101f...refs/remotes/origin/master [9ms]
+2025-05-15 23:23:59.896 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-15 23:24:00.207 [info] > git show --textconv :hyprdots/.config/hypr/autostart.conf [5ms]
+2025-05-15 23:24:00.221 [info] > git check-ignore -v -z --stdin [10ms]
+2025-05-15 23:24:00.221 [info] > git check-ignore -v -z --stdin [5ms]
+2025-05-15 23:24:00.221 [info] > git check-ignore -v -z --stdin [2ms]
+2025-05-15 23:24:00.222 [info] > git ls-files --stage -- hyprdots/.config/hypr/autostart.conf [15ms]
+2025-05-15 23:24:00.226 [info] > git cat-file -s c7ce64d851a39d5e0fd49563bcd2e56ed081a58f [1ms]
+2025-05-15 23:24:00.238 [info] > git blame --root --incremental 6f48bd42188c7014aec7daa7113bc117ed4447f1 -- hyprdots/.config/hypr/autostart.conf [2ms]
+2025-05-15 23:24:01.058 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-15 23:24:01.058 [info] fatal: not a git repository (or any of the parent directories): .git
+2025-05-15 23:24:07.467 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)%00%(parent)%00%(*parent)%00%(authorname)%00%(*authorname)%00%(committerdate:unix)%00%(*committerdate:unix)%00%(subject)%00%(*subject)%00%(upstream:track) [2ms]
+2025-05-15 23:26:57.645 [info] > git rev-parse --show-toplevel [1ms]
+2025-05-15 23:26:57.652 [info] > git rev-parse --git-dir --git-common-dir [0ms]
+2025-05-15 23:26:57.655 [info] [Model][openRepository] Opened repository (path): /home/stuart/KDEPlasma6-DotFiles
+2025-05-15 23:26:57.655 [info] [Model][openRepository] Opened repository (real path): /home/stuart/KDEPlasma6-DotFiles
+2025-05-15 23:26:57.661 [info] > git config --get commit.template [1ms]
+2025-05-15 23:26:57.666 [warning] [Git][getHEAD] Failed to parse HEAD file: Repository is using reftable format.
+2025-05-15 23:26:57.667 [info] > git symbolic-ref --short HEAD [1ms]
+2025-05-15 23:26:57.667 [info] fatal: No such ref: HEAD
+2025-05-15 23:26:57.673 [info] > git rev-parse HEAD [1ms]
+2025-05-15 23:26:57.674 [info] fatal: ambiguous argument 'HEAD': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+2025-05-15 23:26:57.685 [info] > git status -z -uall [5ms]
+2025-05-15 23:26:57.686 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-15 23:26:57.700 [info] > git config --get commit.template [3ms]
+2025-05-15 23:26:57.700 [info] > git symbolic-ref --short HEAD [7ms]
+2025-05-15 23:26:57.700 [info] fatal: No such ref: HEAD
+2025-05-15 23:26:57.705 [info] > git rev-parse HEAD [1ms]
+2025-05-15 23:26:57.705 [info] fatal: ambiguous argument 'HEAD': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+2025-05-15 23:26:57.728 [info] > git status -z -uall [19ms]
+2025-05-15 23:26:57.728 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [15ms]
+2025-05-15 23:26:58.217 [info] > git check-ignore -v -z --stdin [14ms]
+2025-05-15 23:26:58.217 [info] > git check-ignore -v -z --stdin [9ms]
+2025-05-15 23:26:58.217 [info] > git check-ignore -v -z --stdin [5ms]
+2025-05-15 23:26:58.218 [info] > git check-ignore -v -z --stdin [2ms]
+2025-05-15 23:30:27.881 [info] > git symbolic-ref --short HEAD [1ms]
+2025-05-15 23:30:27.903 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [9ms]
+2025-05-15 23:30:27.904 [warning] [Git][getBranch] No such branch: main
+2025-05-15 23:30:27.904 [info] > git config --get commit.template [1ms]
+2025-05-15 23:30:27.925 [info] > git status -z -uall [11ms]
+2025-05-15 23:30:27.926 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [2ms]
+2025-05-15 23:30:27.935 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2025-05-15 23:30:27.935 [warning] [Git][getBranch] No such branch: main
+2025-05-15 23:30:27.935 [error] [GitHistoryProvider][resolveHEADMergeBase] Failed to resolve merge base for main: Error: No such branch: main.
+2025-05-15 23:30:32.947 [info] > git symbolic-ref --short HEAD [6ms]
+2025-05-15 23:30:32.952 [info] > git config --get commit.template [6ms]
+2025-05-15 23:30:32.952 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [1ms]
+2025-05-15 23:30:32.952 [warning] [Git][getBranch] No such branch: main
+2025-05-15 23:30:32.962 [info] > git status -z -uall [6ms]
+2025-05-15 23:30:32.963 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-15 23:31:02.932 [warning] [Git][getRemotes] Error: ENOENT: no such file or directory, open '/home/stuart/KDEPlasma6-DotFiles/.git/config'
+2025-05-15 23:31:02.956 [warning] [Git][getRemotes] Error: ENOENT: no such file or directory, open '/home/stuart/KDEPlasma6-DotFiles/.git/config'
+2025-05-15 23:31:03.552 [info] > git check-ignore -v -z --stdin [10ms]
+2025-05-15 23:31:03.552 [info] > git check-ignore -v -z --stdin [6ms]
+2025-05-15 23:31:03.552 [info] > git check-ignore -v -z --stdin [1ms]
+2025-05-15 23:31:29.990 [info] [main] Log level: Info
+2025-05-15 23:31:29.990 [info] [main] Validating found git in: "git"
+2025-05-15 23:31:29.990 [info] [main] Using git "2.49.0" from "git"
+2025-05-15 23:31:29.990 [info] [Model][doInitialScan] Initial repository scan started
+2025-05-15 23:31:29.990 [info] > git rev-parse --show-toplevel [4ms]
+2025-05-15 23:31:29.996 [info] > git rev-parse --git-dir --git-common-dir [1ms]
+2025-05-15 23:31:30.003 [info] [Model][openRepository] Opened repository (path): /home/stuart/Documents/KDEPlasma6-DotFiles
+2025-05-15 23:31:30.003 [info] [Model][openRepository] Opened repository (real path): /home/stuart/Documents/KDEPlasma6-DotFiles
+2025-05-15 23:31:30.004 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-05-15 23:31:30.013 [info] > git config --get commit.template [3ms]
+2025-05-15 23:31:30.019 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [1ms]
+2025-05-15 23:31:30.019 [warning] [Git][getBranch] No such branch: main
+2025-05-15 23:31:30.031 [info] > git status -z -uall [7ms]
+2025-05-15 23:31:30.032 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [2ms]
+2025-05-15 23:31:30.045 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [7ms]
+2025-05-15 23:31:30.045 [warning] [Git][getBranch] No such branch: main
+2025-05-15 23:31:30.046 [error] [GitHistoryProvider][resolveHEADMergeBase] Failed to resolve merge base for main: Error: No such branch: main.
+2025-05-15 23:31:30.047 [info] > git config --get commit.template [2ms]
+2025-05-15 23:31:30.070 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2025-05-15 23:31:30.071 [warning] [Git][getBranch] No such branch: main
+2025-05-15 23:31:30.080 [info] > git status -z -uall [5ms]
+2025-05-15 23:31:30.082 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [3ms]
+2025-05-15 23:31:36.945 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)%00%(parent)%00%(*parent)%00%(authorname)%00%(*authorname)%00%(committerdate:unix)%00%(*committerdate:unix)%00%(subject)%00%(*subject)%00%(upstream:track) [1ms]
+2025-05-15 23:31:38.902 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)%00%(parent)%00%(*parent)%00%(authorname)%00%(*authorname)%00%(committerdate:unix)%00%(*committerdate:unix)%00%(subject)%00%(*subject)%00%(upstream:track) [1ms]
+2025-05-15 23:31:48.562 [info] > git show --textconv :README.MD [7ms]
+2025-05-15 23:31:48.569 [info] > git ls-files --stage -- README.MD [7ms]
+2025-05-15 23:31:48.576 [info] > git hash-object -t tree /dev/null [8ms]
+2025-05-15 23:31:48.576 [warning] [GitFileSystemProvider][readFile] File not found - git:/home/stuart/Documents/KDEPlasma6-DotFiles/README.MD.git?%7B%22path%22%3A%22%2Fhome%2Fstuart%2FDocuments%2FKDEPlasma6-DotFiles%2FREADME.MD%22%2C%22ref%22%3A%22%22%7D
+2025-05-15 23:31:48.577 [info] > git hash-object -t tree /dev/null [2ms]
+2025-05-15 23:31:48.577 [warning] [GitFileSystemProvider][stat] File not found - git:/home/stuart/Documents/KDEPlasma6-DotFiles/README.MD.git?%7B%22path%22%3A%22%2Fhome%2Fstuart%2FDocuments%2FKDEPlasma6-DotFiles%2FREADME.MD%22%2C%22ref%22%3A%22%22%7D
+2025-05-15 23:31:48.837 [info] > git check-ignore -v -z --stdin [1ms]
+2025-05-15 23:31:49.493 [info] > git config --get commit.template [6ms]
+2025-05-15 23:31:49.494 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2025-05-15 23:31:49.494 [warning] [Git][getBranch] No such branch: main
+2025-05-15 23:31:49.503 [info] > git status -z -uall [4ms]
+2025-05-15 23:31:49.503 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-15 23:31:55.599 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname)%00%(parent)%00%(*parent)%00%(authorname)%00%(*authorname)%00%(committerdate:unix)%00%(*committerdate:unix)%00%(subject)%00%(*subject)%00%(upstream:track) [1ms]
+2025-05-15 23:32:03.235 [info] > git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%D%n%B -z --shortstat --diff-merges=first-parent -n50 --skip=0 --topo-order --decorate=full --stdin [1ms]
+2025-05-15 23:32:03.235 [info] fatal: bad revision 'refs/heads/main'
+2025-05-15 23:32:03.236 [error] [GitHistoryProvider][provideHistoryItems] Failed to get history items with options '{"historyItemRefs":["refs/heads/main"],"limit":50,"skip":0}': Failed to execute git {
+  "exitCode": 128,
+  "gitCommand": "log",
+  "stdout": "",
+  "stderr": "fatal: bad revision 'refs/heads/main'\n"
+}
+2025-05-15 23:32:07.362 [info] > git config --get commit.template [5ms]
+2025-05-15 23:32:07.363 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [1ms]
+2025-05-15 23:32:07.363 [warning] [Git][getBranch] No such branch: main
+2025-05-15 23:32:07.373 [info] > git status -z -uall [6ms]
+2025-05-15 23:32:07.373 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-15 23:32:08.536 [info] > git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%D%n%B -z --shortstat --diff-merges=first-parent -n50 --skip=0 --topo-order --decorate=full --stdin [1ms]
+2025-05-15 23:32:08.536 [info] fatal: bad revision 'refs/heads/main'
+2025-05-15 23:32:08.536 [error] [GitHistoryProvider][provideHistoryItems] Failed to get history items with options '{"historyItemRefs":["refs/heads/main"],"limit":50,"skip":0}': Failed to execute git {
+  "exitCode": 128,
+  "gitCommand": "log",
+  "stdout": "",
+  "stderr": "fatal: bad revision 'refs/heads/main'\n"
+}
+2025-05-15 23:32:22.584 [info] > git add -A -- . [2ms]
+2025-05-15 23:32:22.598 [info] > git -c user.useConfigOnly=true commit --quiet --allow-empty-message --file - [5ms]
+2025-05-15 23:32:22.605 [info] > git config --get commit.template [1ms]
+2025-05-15 23:32:22.615 [info] > git config --get commit.template [2ms]
+2025-05-15 23:32:22.622 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [1ms]
+2025-05-15 23:32:22.631 [info] > git status -z -uall [4ms]
+2025-05-15 23:32:22.632 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-15 23:32:22.643 [info] > git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%D%n%B -z --shortstat --diff-merges=first-parent -n50 --skip=0 --topo-order --decorate=full --stdin [1ms]
+2025-05-15 23:32:22.662 [info] > git config --get commit.template [6ms]
+2025-05-15 23:32:22.663 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2025-05-15 23:32:22.694 [info] > git status -z -uall [25ms]
+2025-05-15 23:32:22.694 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [20ms]
+2025-05-15 23:32:23.012 [info] > git show --textconv :README.MD [8ms]
+2025-05-15 23:32:23.013 [info] > git ls-files --stage -- README.MD [2ms]
+2025-05-15 23:32:23.019 [info] > git cat-file -s 99153b797fc4c0d84e454d56949b787ea6f5ba6b [1ms]
+2025-05-15 23:32:23.034 [info] > git blame --root --incremental d28f29a24bc9297bc3ac03a9e94f718fa37d7329 -- README.MD [2ms]
+2025-05-15 23:32:23.771 [info] > git ls-files --stage -- README.MD [1ms]
+2025-05-15 23:32:23.776 [info] > git cat-file -s 99153b797fc4c0d84e454d56949b787ea6f5ba6b [1ms]
+2025-05-15 23:32:23.783 [info] > git show --textconv :README.MD [1ms]
+2025-05-15 23:32:29.809 [info] > git push -u origin main [906ms]
+2025-05-15 23:32:29.809 [info] /bin/sh: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
+/bin/sh: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
+To https://github.com/StuartW-Source/KDEPlasma6-DotFiles.git
+ * [new branch]      main -> main
+2025-05-15 23:32:29.820 [info] > git config --get commit.template [6ms]
+2025-05-15 23:32:29.821 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2025-05-15 23:32:29.832 [info] > git status -z -uall [6ms]
+2025-05-15 23:32:29.833 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [2ms]
+2025-05-15 23:32:29.843 [info] > git merge-base refs/heads/main refs/remotes/origin/main [1ms]
+2025-05-15 23:32:29.856 [info] > git diff --name-status -z --diff-filter=ADMR d28f29a24bc9297bc3ac03a9e94f718fa37d7329...refs/remotes/origin/main [7ms]
+2025-05-15 23:32:29.857 [info] > git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%D%n%B -z --shortstat --diff-merges=first-parent -n50 --skip=0 --topo-order --decorate=full --stdin [2ms]
+2025-05-15 23:32:30.894 [info] > git config --get commit.template [6ms]
+2025-05-15 23:32:30.895 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [1ms]
+2025-05-15 23:32:30.905 [info] > git status -z -uall [5ms]
+2025-05-15 23:32:30.906 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-15 23:32:30.991 [info] > git ls-files --stage -- README.MD [1ms]
+2025-05-15 23:32:30.997 [info] > git cat-file -s 99153b797fc4c0d84e454d56949b787ea6f5ba6b [1ms]
+2025-05-15 23:32:31.004 [info] > git show --textconv :README.MD [1ms]
+2025-05-15 23:32:59.352 [info] > git check-ignore -v -z --stdin [1ms]
+2025-05-15 23:32:59.923 [info] > git config --get commit.template [5ms]
+2025-05-15 23:32:59.923 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [1ms]
+2025-05-15 23:32:59.933 [info] > git status -z -uall [5ms]
+2025-05-15 23:32:59.934 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-15 23:33:03.608 [info] > git check-ignore -v -z --stdin [1ms]
+2025-05-15 23:33:04.946 [info] > git config --get commit.template [5ms]
+2025-05-15 23:33:04.947 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [1ms]
+2025-05-15 23:33:04.956 [info] > git status -z -uall [5ms]
+2025-05-15 23:33:04.957 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-15 23:34:59.108 [warning] [Git][getHEAD] Failed to parse HEAD file: ENOENT: no such file or directory, open '/home/stuart/Documents/KDEPlasma6-DotFiles/.git/HEAD'
+2025-05-15 23:34:59.119 [warning] [Git][getRemotes] Error: ENOENT: no such file or directory, open '/home/stuart/Documents/KDEPlasma6-DotFiles/.git/config'
+2025-05-15 23:34:59.130 [warning] [Git][getHEAD] Failed to parse HEAD file: ENOENT: no such file or directory, open '/home/stuart/Documents/KDEPlasma6-DotFiles/.git/HEAD'
+2025-05-15 23:34:59.140 [warning] [Git][getRemotes] Error: ENOENT: no such file or directory, open '/home/stuart/Documents/KDEPlasma6-DotFiles/.git/config'
+2025-05-15 23:35:25.256 [info] [main] Log level: Info
+2025-05-15 23:35:25.256 [info] [main] Validating found git in: "git"
+2025-05-15 23:35:25.256 [info] [main] Using git "2.49.0" from "git"
+2025-05-15 23:35:25.256 [info] [Model][doInitialScan] Initial repository scan started
+2025-05-15 23:35:25.256 [info] > git rev-parse --show-toplevel [4ms]
+2025-05-15 23:35:25.263 [info] > git rev-parse --git-dir --git-common-dir [1ms]
+2025-05-15 23:35:25.270 [info] [Model][openRepository] Opened repository (path): /home/stuart/KDEPlasma6-DotFiles
+2025-05-15 23:35:25.270 [info] [Model][openRepository] Opened repository (real path): /home/stuart/KDEPlasma6-DotFiles
+2025-05-15 23:35:25.285 [info] > git rev-parse --show-toplevel [4ms]
+2025-05-15 23:35:25.285 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-05-15 23:35:25.286 [info] > git config --get commit.template [9ms]
+2025-05-15 23:35:25.293 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2025-05-15 23:35:25.303 [info] > git status -z -uall [5ms]
+2025-05-15 23:35:25.304 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-05-15 23:35:25.326 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [7ms]
+2025-05-15 23:35:25.332 [info] > git config --get --local branch.main.vscode-merge-base [1ms]
+2025-05-15 23:35:25.332 [warning] [Git][config] git config failed: Failed to execute git
+2025-05-15 23:35:25.337 [info] > git config --get commit.template [12ms]
+2025-05-15 23:35:25.363 [info] > git reflog main --grep-reflog=branch: Created from *. [26ms]
+2025-05-15 23:35:25.370 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [2ms]
+2025-05-15 23:35:25.370 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2025-05-15 23:35:25.370 [warning] [Repository][getDefaultBranch] Failed to get default branch details: Failed to execute git.
+2025-05-15 23:35:25.375 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [13ms]
+2025-05-15 23:35:25.377 [info] > git merge-base refs/heads/main refs/remotes/origin/main [2ms]
+2025-05-15 23:35:25.402 [info] > git status -z -uall [16ms]
+2025-05-15 23:35:25.402 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [11ms]
+2025-05-15 23:35:25.410 [info] > git diff --name-status -z --diff-filter=ADMR d28f29a24bc9297bc3ac03a9e94f718fa37d7329...refs/remotes/origin/main [29ms]
+2025-05-15 23:35:25.410 [info] > git merge-base refs/heads/main refs/remotes/origin/main [1ms]
+2025-05-15 23:35:25.416 [info] > git diff --name-status -z --diff-filter=ADMR d28f29a24bc9297bc3ac03a9e94f718fa37d7329...refs/remotes/origin/main [2ms]
+2025-05-15 23:35:25.793 [info] > git check-ignore -v -z --stdin [0ms]
+2025-05-15 23:35:28.404 [info] > git show --textconv :README.MD [6ms]
+2025-05-15 23:35:28.405 [info] > git ls-files --stage -- README.MD [1ms]
+2025-05-15 23:35:28.410 [info] > git cat-file -s 99153b797fc4c0d84e454d56949b787ea6f5ba6b [1ms]
+2025-05-15 23:36:34.468 [info] > git check-ignore -v -z --stdin [1ms]
+2025-05-15 23:37:01.383 [info] > git check-ignore -v -z --stdin [1ms]
+2025-05-15 23:37:17.042 [info] > git check-ignore -v -z --stdin [1ms]
+2025-05-15 23:37:33.507 [info] > git check-ignore -v -z --stdin [1ms]
+2025-05-15 23:38:16.643 [info] > git check-ignore -v -z --stdin [1ms]
+2025-05-15 23:38:51.794 [info] > git check-ignore -v -z --stdin [1ms]
+2025-05-15 23:39:12.605 [info] > git check-ignore -v -z --stdin [1ms]
+2025-05-15 23:41:32.502 [info] > git check-ignore -v -z --stdin [1ms]

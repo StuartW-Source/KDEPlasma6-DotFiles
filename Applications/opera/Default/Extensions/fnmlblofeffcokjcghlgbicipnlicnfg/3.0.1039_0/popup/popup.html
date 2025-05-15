@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Settings</title>
+		<meta charset="UTF-8">
+		<link media="all" href="popup.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../toaster/toastify.css">
+		<link rel="icon" sizes="128x128" href="../images/favicon128.png">
+		<link rel="icon" sizes="32x32" href="../images/favicon32.png">
+	</head>
+	<body>
+		<dialog id="justAMessageDialog">
+			<p></p>
+			<menu>
+				<button value="cancel">Close</button>
+			</menu>
+		</dialog>
+		<div id="banner">
+			<a href="https://www.allkeyshop.com/blog/" style="height:25px;">
+				<img src="../images/aks-logo.png">
+			</a>
+			<h2 class="bt noMarge center active" data-tab-container-id="merchantSelection">
+				<img src="../images/store.png">
+				<span>Merchants</span>
+				<div class="borderBt"></div>
+			</h2>
+			<h2 class="bt noMarge center dNone" data-tab-container-id="voucherSelection">
+				💰
+				<span>Coupons</span>
+				<div class="borderBt"></div>
+			</h2>
+			<h2 class="bt noMarge center" data-tab-container-id="bugReport">
+				<img src="../images/bug.png">
+				<span>Report a bug</span>
+				<div class="borderBt"></div>
+			</h2>
+		</div>
+		<div id="bannerBorder"></div>
+		<div id="tabs">
+			<div id="merchantSelection" class="tabContainer tabOpen">
+				<h4 class="center noMarge">You may need to reload the pages to apply this changes</h4 class="center">
+				<hr>
+				<p class="center">
+					Choose the default currency of the linked offers:
+					<select name="currency" disabled>
+						<option selected value="EUR">€ EUR</option>
+						<option value="USD">$ USD</option>
+						<option value="GBP">£ GBP</option>
+					</select>
+				</p>
+				<p class="center">
+					<label for="open_mode">Open the offers on a new tab ?</label>
+					<input type="checkbox" name="open_mode" id="open_mode" disabled>
+				</p>
+				<p class="center">
+					<label for="display_always">Display AllKeyShop price even when it's not the better price ?</label>
+					<input type="checkbox" name="display_always" id="display_always" disabled>
+				</p>
+				<p class="center">
+					<label for="auto_voucher2">Test discount codes automaticaly at checkout</label>
+					<input type="checkbox" name="auto_voucher" id="auto_voucher2" disabled>
+				</p>
+				<hr>
+				<p id="listMerchantsTitle">
+					Choose where the Allkeyshop prices (<img src="../images/store.png" height="15" class="vAlignSub">) and discount coupons (💰) will be added:
+				</p>
+				<hr/>
+				<label for="official_merchants" class="center dBlock paperButton">
+					<input type="checkbox" name="official_merchants" id="official_merchants" class="vAlignBot" disabled> All official stores
+				</label>
+				<div id="listContainerOfficial" class="listContainer">
+					<header>
+						<img src="../images/store.png" height="15" title="Display AKS's best price" class="priceDisplayGlobalToggler">
+						<span title="Show the best discount coupons" class="couponDisplayGlobalToggler">💰</span>
+					</header>
+				</div>
+				<hr/>
+				<label for="key_merchants" class="center dBlock paperButton">
+					<input type="checkbox" name="key_merchants" id="key_merchants" class="vAlignBot" disabled> All CD key stores
+				</label>
+				<div id="listContainerKeyShop" class="listContainer">
+					<header>
+						<img src="../images/store.png" height="15" title="Display AKS's best price" class="priceDisplayGlobalToggler clickable">
+						<span title="Show the best discount coupons" class="couponDisplayGlobalToggler clickable">💰</span>
+					</header>
+				</div>
+			</div>
+			<div id="voucherSelection" class="tabContainer">
+				<div id="voucherSuccess">
+					<div id="vouchersList"></div>
+					<label for="auto_voucher" style="padding:10px 5px;cursor:pointer;display:inline-block;width:fit-content;white-space:nowrap;margin:5px auto;">
+						Automatically apply best coupons at checkout <input type="checkbox" id="auto_voucher" style="vertical-align:middle;margin:0 0 0 5px;cursor:pointer">
+					</label><br>
+				</div>
+				<div id="voucherError" class="dNone">
+					<h2 style="text-align:center">No coupons here guys sorry.</h2>
+					<img src="../images/vouchers/fail.png" height="400" style="display:block;margin:0 auto;" class="emptyVouchers">
+				</div>
+			</div>
+			<div id="bugReport" class="tabContainer">
+				<h2>Report a bug</h2>
+				<form action="" method="post" id="bug_report">
+					<div>
+						<div>
+							<div>Bug URL:</div>
+							<div>Your email:</div>
+							<div>Subject:</div>
+							<div>Description:</div>
+						</div>
+						<div>
+							<input type="url" name="report[url]" placeholder="The URL of your bug (can be blank)"/>
+							<input type="email" name="report[email]" placeholder="Only used if we need more information on this bug" required/>
+							<input name="report[subject]" placeholder="A short description of the bug" required/>
+							<textarea
+								rows="4"
+								name="report[description]"
+								placeholder="Describe your problem here"
+								required
+							></textarea>
+						</div>
+					</div>
+					<div>
+						<div id="include_screenshot">
+							<label for="include_screenshot_input">
+								<input type="checkbox" name="include_screenshot" id="include_screenshot_input">
+								Include a screenshot of the current page
+							</label>
+						</div>
+						<button>Send bug report</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<script src="../toaster/toastify.js" async></script>
+		<script src="../merchant_list.js" async></script>
+		<script src="../purify.min.js" async></script>
+		<script src="popup.js" async></script>
+	</body>
+</html>

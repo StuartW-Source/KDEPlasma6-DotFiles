@@ -1,0 +1,6 @@
+2025/05/11-21:51:34.927 252d Creating DB /home/stuart/.config/opera/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb since it was missing.
+2025/05/11-21:51:34.934 252d Reusing MANIFEST /home/stuart/.config/opera/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/05/11-21:52:07.019 252e Level-0 table #5: started
+2025/05/11-21:52:07.021 252e Level-0 table #5: 2166 bytes OK
+2025/05/11-21:52:07.025 252e Delete type=0 #3
+2025/05/11-21:52:07.025 252e Manual compaction at level-0 from (begin) .. (end); will stop at (end)

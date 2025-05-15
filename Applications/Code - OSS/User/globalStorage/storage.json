@@ -1,0 +1,97 @@
+{
+    "telemetry.sqmId": "",
+    "telemetry.machineId": "99ebe0e9a246f877c955f09273d19e966d431bc6156a367dd5fce852efe62fd6",
+    "telemetry.devDeviceId": "a4d7afdd-7913-4f3e-9133-beb116de9abb",
+    "backupWorkspaces": {
+        "workspaces": [],
+        "folders": [
+            {
+                "folderUri": "file:///home/stuart"
+            },
+            {
+                "folderUri": "file:///home/stuart/Documents/KDEPlasma6-DotFiles"
+            },
+            {
+                "folderUri": "file:///home/stuart/KDEPlasma6-DotFiles"
+            }
+        ],
+        "emptyWindows": []
+    },
+    "windowControlHeight": 35,
+    "profileAssociations": {
+        "workspaces": {
+            "file:///home/stuart": "__default__profile__",
+            "file:///home/stuart/Documents/Hyprland-Dotfiles": "__default__profile__",
+            "file:///home/stuart/Documents/KDEPlasma6-DotFiles": "__default__profile__",
+            "file:///home/stuart/KDEPlasma6-DotFiles": "__default__profile__"
+        },
+        "emptyWindows": {}
+    },
+    "theme": "hc-black",
+    "themeBackground": "#000000",
+    "windowSplash": {
+        "zoomLevel": 0,
+        "baseTheme": "hc-black",
+        "colorInfo": {
+            "foreground": "#ffffff",
+            "background": "#000000",
+            "editorBackground": "#000000",
+            "titleBarBackground": "#000000",
+            "titleBarBorder": "#6fc3df",
+            "activityBarBackground": "#000000",
+            "activityBarBorder": "#6fc3df",
+            "sideBarBackground": "#000000",
+            "sideBarBorder": "#6fc3df",
+            "statusBarBorder": "#6fc3df",
+            "windowBorder": "#6fc3df"
+        },
+        "layoutInfo": {
+            "sideBarSide": "left",
+            "editorPartMinWidth": 220,
+            "titleBarHeight": 35,
+            "activityBarWidth": 48,
+            "sideBarWidth": 300,
+            "auxiliarySideBarWidth": 0,
+            "statusBarHeight": 22,
+            "windowBorder": false
+        }
+    },
+    "windowsState": {
+        "lastActiveWindow": {
+            "folder": "file:///home/stuart/KDEPlasma6-DotFiles",
+            "backupPath": "/home/stuart/.config/Code - OSS/Backups/49258270e4405aa9e6591261c5280837",
+            "uiState": {
+                "mode": 0,
+                "x": 3107,
+                "y": 28,
+                "width": 1200,
+                "height": 800
+            }
+        },
+        "openedWindows": []
+    },
+    "windowSplashWorkspaceOverride": {
+        "layoutInfo": {
+            "sideBarWidth": 300,
+            "auxiliaryBarWidth": 300,
+            "workspaces": {
+                "65d238d1093bca546b89a70d330a56c9": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "fc6897712dc06a1b74ce2f9206fc7a57": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "36272851faa91cb22bd50106dd43b8a2": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "13cec67a445783d864ade439192da247": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                }
+            }
+        }
+    }
+}
