@@ -1,5 +1,0 @@
-2025-05-15 23:27:28.367 [warning] [File Watcher (node.js)] Watcher shutdown because watched path got deleted
-2025-05-15 23:28:00.276 [warning] [File Watcher (node.js)] Watcher shutdown because watched path got deleted
-2025-05-15 23:28:30.846 [warning] [File Watcher (node.js)] Watcher shutdown because watched path got deleted
-2025-05-15 23:34:20.125 [warning] [File Watcher] Watcher shutdown because watched path got deleted (path: /home/stuart/Documents/KDEPlasma6-DotFiles)
-2025-05-15 23:34:20.125 [error] [File Watcher (node.js)] Failed to watch /home/stuart/Documents/KDEPlasma6-DotFiles/.git/refs/remotes/origin/main for changes using fs.watch() (Error: ENOENT: no such file or directory, watch '/home/stuart/Documents/KDEPlasma6-DotFiles/.git/refs/remotes/origin/main')

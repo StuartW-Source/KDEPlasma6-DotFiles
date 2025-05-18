@@ -1,6 +1,0 @@
-2025/05/01-18:05:03.554 545 Creating DB /home/stuart/.config/opera/Default/WebStorage/9/IndexedDB/indexeddb.leveldb since it was missing.
-2025/05/01-18:05:03.560 545 Reusing MANIFEST /home/stuart/.config/opera/Default/WebStorage/9/IndexedDB/indexeddb.leveldb/MANIFEST-000001
-2025/05/01-18:17:29.928 53a Level-0 table #5: started
-2025/05/01-18:17:29.930 53a Level-0 table #5: 11049 bytes OK
-2025/05/01-18:17:29.934 53a Delete type=0 #3
-2025/05/01-18:17:29.934 53a Manual compaction at level-0 from (begin) .. (end); will stop at (end)

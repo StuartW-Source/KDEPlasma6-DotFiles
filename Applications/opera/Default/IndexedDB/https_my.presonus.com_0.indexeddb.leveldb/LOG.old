@@ -1,7 +1,0 @@
-2025/05/05-21:04:14.711 4d2 Reusing MANIFEST /home/stuart/.config/opera/Default/IndexedDB/https_my.presonus.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/05/05-21:04:14.711 4d2 Recovering log #3
-2025/05/05-21:04:14.711 4d2 Reusing old log /home/stuart/.config/opera/Default/IndexedDB/https_my.presonus.com_0.indexeddb.leveldb/000003.log 
-2025/05/05-21:04:15.914 50e Level-0 table #5: started
-2025/05/05-21:04:15.917 50e Level-0 table #5: 1593 bytes OK
-2025/05/05-21:04:15.922 50e Delete type=0 #3
-2025/05/05-21:04:15.922 4d2 Manual compaction at level-0 from '\x00\x02\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x03\x00\x00\x00' @ 0 : 0; will stop at (end)

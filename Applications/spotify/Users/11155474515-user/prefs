@@ -1,3 +1,0 @@
-connect.mdns_devices="[]"
-connect.dial_devices="[{\"address\":\"192.168.1.103\",\"app_state\":\"MISSING\",\"created_timestamp\":1746835651,\"device_id\":\"f79f8538-a016-30fd-b3e9-3cf9179b27f7\",\"dial_location_url\":\"http://192.168.1.103:60000/dd.xml\",\"display_name\":\"Stuart's Fire TV\",\"last_seen\":1746837023,\"manufacturer\":\"Amazon\",\"model_name\":\"AFTMM\",\"product_cap\":\"\",\"public_ip\":\"2a01:4b00:9a04:3a00:f22f:74ff:fe16:52c8\",\"wol\":{\"all_interfaces\":false,\"delay_ms\":250,\"mac\":\"68dbf5830687\",\"port\":9,\"retries\":160}}]"
-audio.play_bitrate_non_metered_migrated=true
