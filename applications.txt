@@ -1,0 +1,11 @@
+linux-headers
+fastfetch
+ghostty
+opera
+spotify
+guitarix
+visual-studio-code-bin
+ttf-jetbrains-mono-nerd
+sddm
+zen-browser-bin
+blueman
