@@ -4,16 +4,12 @@ Welcome - This is not finished at all. please do not try this, as of now it is a
 
 ![desktop-image](/Images/Desktop%20example-1.png)
 
-System monitor widgets in the top left.
-Media player with media controls.
-Time and date in the center.
-In the top right interactive desktop switching.
-Lock and power buttons.
-Floating & hiding task bar with candy icon set.
+On the top task bar, going from left to right. System information widgets monitoring GPU usage, GPU temp, CPU usage, CPU temp and ram usage. Media player with media contols. Date and time. Interactive desktop switcher. Lock and Power buttons.
 
-### Default Terminal
+![power-options](/Images/Power-options.png)
+
+### Default Terminal - Ghostyy
 
 ![termial-image](/Images/Terminal.png)
 
-Fastfetch with custom system information layout.
-Cute cat...
+Fastfetch with custom system information layout. Cute cat and basic starship setup.
