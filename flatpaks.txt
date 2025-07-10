@@ -1,0 +1,8 @@
+com.github.tchx84.Flatseal
+com.valvesoftware.Steam
+dev.vencord.Vesktop
+io.github.flattool.Warehouse
+io.github.giantpinkrobots.flatsweep
+org.gimp.GIMP
+org.gnome.gedit
+org.guitarix.Guitarix

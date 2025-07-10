@@ -71,6 +71,7 @@ echo "✅ Paru installed."
 
 #package list
 app=$(read_packages "applications.txt")
+FLATPAK_LIST="flatpaks.txt"
 
 #install packages
 for app in $app; do
@@ -81,28 +82,100 @@ for app in $app; do
   fi
 done
 
-#wallpaper copy
+# Remote to install from (default is flathub)
+REMOTE="flathub"
+
+# Check if flatpaks.txt exists
+if [[ ! -f "$FLATPAK_LIST" ]]; then
+    echo "Error: $FLATPAK_LIST not found!"
+    exit 1
+fi
+
+# Read each line in the file
+while IFS= read -r app_id || [[ -n "$app_id" ]]; do
+    # Skip empty lines or lines starting with #
+    [[ -z "$app_id" || "$app_id" =~ ^# ]] && continue
+
+    # Check if the app is already installed
+    if flatpak list --app --columns=application | grep -qx "$app_id"; then
+        echo "✅ $app_id is already installed."
+    else
+        echo "📦 Installing $app_id..."
+        run_cmd "flatpak install -y "$REMOTE" "$app_id""
+    fi
+done < "$FLATPAK_LIST"
+
+#Configs copy#
+
+
+
+####Wallpaper Copy###
+
 echo "copying configuration files"
-run_cmd "cp ~/KDEPLAMSA6-DOTFILES/wallpaper/ ~/pictures/wallpaper/"
-run_cmd "cp ~/KDEPLAMSA6-DOTFILES/wallpaper/ ~/pictures/wallpaper/"
 
-#fastfetch config copy
-run_cmd "cp ~/KDEPLAMSA6-DOTFILES/Applications/fastfetch/cat.png ~/.config/fastfetch/"
-run_cmd "cp ~/KDEPLAMSA6-DOTFILES/Applications/fastfetch/config.jsonc ~/.config/fastfetch/"
+copy_and_verify() {
+  local name="$1"
+  local src="$2"
+  local dest="$3"
+  local is_dir="$4"  # "file" or "dir"
 
-#ghostty config copy
-run_cmd "cp ~/KDEPLAMSA6-DOTFILES/Applications/ghostty/config ~/.config/ghostty/config"
+  echo "📁 Processing $name"
 
-#starship config copy
-run_cmd "cp ~/KDEPLASMA6-DOTFILES/starship/starship.toml ~/.config/starship.toml"
+  if [[ "$is_dir" == "dir" && ! -d "$src" ]]; then
+    echo "❌ $name - Source directory does not exist: $src"
+    return 1
+  elif [[ "$is_dir" == "file" && ! -f "$src" ]]; then
+    echo "❌ $name - Source file does not exist: $src"
+    return 1
+  fi
 
-#KDE desktop set up copy
-run_cmd "cp ~/KDEPLASMA6-DOTFILES/KDE-desktop/plasma-org.kde.plasma.desktop-appletsrc ~/.config/"
-run_cmd "cp ~/KDEPLASMA6-DOTFILES/KDE-desktop/plasmashellrc ~/.config/"
-run_cmd "cp ~/KDEPLASMA6-DOTFILES/KDE-desktop/plasmoids ~/.local/share/plasma"
+  run_cmd "mkdir -p \"$(dirname "$dest")\""
 
-#copy bashrc config file
-run_cmd "cp ~/KDEPLASMA6-DOTFILES/Applications/bashrc/.bashrc ~/.bashrc"
+  if [[ "$is_dir" == "dir" ]]; then
+    # Ensure the destination directory exists
+    run_cmd "mkdir -p \"$dest\""
+    # Copy only contents, overwrite matching files
+    run_cmd "cp -r \"$src\"/. \"$dest\"/"
+  else
+    run_cmd "mkdir -p \"$(dirname "$dest")\""
+    run_cmd "cp \"$src\" \"$dest\""
+  fi
+
+  if $DRY_RUN; then
+    echo "ℹ️  Skipping verification for $name due to dry run mode."
+    return 0
+  fi
+
+  if [[ "$is_dir" == "dir" ]]; then
+    diff -r "$src" "$dest" > /dev/null
+    if [[ $? -eq 0 ]]; then
+      echo "✅ $name - Directory copy verified."
+    else
+      echo "⚠️ $name - Directory differs between $src and $dest."
+    fi
+  else
+    local src_hash
+    local dest_hash
+    src_hash=$(sha256sum "$src" | awk '{print $1}')
+    dest_hash=$(sha256sum "$dest" | awk '{print $1}')
+    if [[ "$src_hash" == "$dest_hash" ]]; then
+      echo "✅ $name - File copy verified."
+    else
+      echo "⚠️ $name - File copy content mismatch!"
+    fi
+  fi
+}
+
+copy_and_verify "Wallpaper" "$HOME/KDEPlasma6-DotFiles/wallpaper/" "$HOME/Pictures/wallpaper" "dir"
+copy_and_verify "Fastfetch" "$HOME/KDEPlasma6-DotFiles/Applications/fastfetch/" "$HOME/.config/fastfetch" "dir"
+copy_and_verify "Ghostty" "$HOME/KDEPlasma6-DotFiles/Applications/ghostty/config" "$HOME/.config/ghostty/config" "file"
+copy_and_verify "Starship" "$HOME/KDEPlasma6-DotFiles/starship/starship.toml" "$HOME/.config/starship.toml" "file"
+copy_and_verify "KDE Desktop" "$HOME/KDEPlasma6-DotFiles/KDE-desktop/" "$HOME/.config/" "dir"
+copy_and_verify "Plasmoids" "$HOME/KDEPlasma6-DotFiles/plasmoids" "$HOME/.local/share/plasma/plasmoids" "dir"
+copy_and_verify "Bashrc" "$HOME/KDEPlasma6-DotFiles/Applications/bashrc/.bashrc" "$HOME/.bashrc" "file"
+
+
+
 
 echo "Setup complete. Reboot required"
 read -rp "Reboot now? [y/N]: " reboot_now

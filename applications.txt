@@ -2,7 +2,6 @@ linux-headers
 fastfetch
 ghostty
 spotify
-guitarix
 visual-studio-code-bin
 ttf-jetbrains-mono-nerd
 sddm
