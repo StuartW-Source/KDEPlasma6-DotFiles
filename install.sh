@@ -1,10 +1,7 @@
-##install script for StuartW-Source KDE-Plasma6 Dotfiles##
-
-
 #!/bin/bash
 set -e
 
-# Enable dry-run with --dry-run
+# Enable dry run mode with --dry-run
 DRY_RUN=false
 if [[ "$1" == "--dry-run" ]]; then
   DRY_RUN=true
@@ -14,6 +11,37 @@ VERBOSE=false
 for arg in "$@"; do
   [[ "$arg" == "--verbose" ]] && VERBOSE=true
 done
+# Helper to run or simulate commands
+run_cmd() {
+  if $DRY_RUN; then
+    echo "[DRY RUN] $*"
+  else
+    if $VERBOSE; then
+      echo "[VERBOSE] $*"
+      bash -c "$@"
+    else
+      bash -c "$@" > /dev/null 2>&1 &
+      pid=$!
+      while kill -0 $pid 2>/dev/null; do
+        echo -n "."
+        sleep 0.7
+      done
+      wait $pid
+      echo " done"
+    fi
+  fi
+}
+
+#install base-devel which is required for AUR managment
+run_cmd "sudo pacman -S --needed base-devel"
+
+#install nvidia drivers
+echo "installing nvidia drivers"
+run_cmd "sudo pacman -S nvidia-open nvidia-utils"
+
+#enable bluetooth to start on startup
+echo "enabling bluetooth on startup"
+run_cmd "sudo systemctl enable bluetooth"
 
 #Read packages function
 read_packages() {
@@ -21,65 +49,65 @@ read_packages() {
   if [[ -f "$file" ]]; then
     tr '\n' ' ' < "$file"
   else
-    echo "❌ Error: $file not found" >&2
+    echo " Error: $file not found" >&2
     exit 1
   fi
 }
+
+echo "📦 Installing git and paru..."
+run_cmd "sudo pacman -Syu --noconfirm git"
+
+if [[ ! -d "paru" ]]; then
+  run_cmd "git clone https://aur.archlinux.org/paru.git"
+fi
+
+if [[ -d "paru" ]]; then
+  cd paru || exit
+  run_cmd "makepkg -si --noconfirm"
+  cd ..
+fi
+
+echo "✅ Paru installed."
 
 #package list
 app=$(read_packages "applications.txt")
 
 #install packages
-for pkg in $req; do
+for app in $app; do
   if pacman -Qq "$app" &>/dev/null; then
-    echo "✅ $app is already installed, skipping."
+    echo " $app is already installed, skipping."
   else
     run_cmd "paru -S --noconfirm $app"
   fi
 done
 
-#download and install paru community repo manager
-git clone https://aur.archlinux.org/paru.git
-cd ~/paru
-makepkg -si --noconfirm
-
-#install git
-echo "installing git and updating system"
-sudo pacman -Syu --noconfirm git
-
-#enable bluetooth to start on startup
-echo "enabling bluetooth on startup"
-run_cmd "sudo bluetoothctl start"
-run_cmd "sudo bluetoothctl enable bluetooth"
-
-#install base-devel which is required for AUR managment
-sudo pacman -S --needed base-devel
-
 #wallpaper copy
-cp ~/KDEPLAMSA6-DOTFILES/wallpaper/Goku_1.jpeg ~/pictures/wallpaper/
-cp ~/KDEPLAMSA6-DOTFILES/wallpaper/Vegeta_1.jpeg ~/pictures/wallpaper/
+echo "copying configuration files"
+run_cmd "cp ~/KDEPLAMSA6-DOTFILES/wallpaper/ ~/pictures/wallpaper/"
+run_cmd "cp ~/KDEPLAMSA6-DOTFILES/wallpaper/ ~/pictures/wallpaper/"
 
 #fastfetch config copy
-cp ~/KDEPLAMSA6-DOTFILES/Applications/fastfetch/cat.png ~/.config/fastfetch/
-cp ~/KDEPLAMSA6-DOTFILES/Applications/fastfetch/config.jsonc ~/.config/fastfetch/
+run_cmd "cp ~/KDEPLAMSA6-DOTFILES/Applications/fastfetch/cat.png ~/.config/fastfetch/"
+run_cmd "cp ~/KDEPLAMSA6-DOTFILES/Applications/fastfetch/config.jsonc ~/.config/fastfetch/"
 
 #ghostty config copy
-cp ~/KDEPLAMSA6-DOTFILES/Applications/ghostty/config ~/.config/ghostty/
+run_cmd "cp ~/KDEPLAMSA6-DOTFILES/Applications/ghostty/config ~/.config/ghostty/config"
 
 #starship config copy
-cp ~/KDEPLASMA6-DOTFILES/starship/starship.toml ~/.config/
+run_cmd "cp ~/KDEPLASMA6-DOTFILES/starship/starship.toml ~/.config/starship.toml"
 
 #KDE desktop set up copy
-cp ~/KDEPLASMA6-DOTFILES/KDE-desktop/plasma-org.kde.plasma.desktop-appletsrc ~/.config/
-cp ~/KDEPLASMA6-DOTFILES/KDE-desktop/plasmashellrc ~/.config/
-cp ~/KDEPLASMA6-DOTFILES/KDE-desktop/plasmoids ~/.local/share/plasma
-
-#install nvidia drivers
-sudo pacman -S nvidia-open nvidia-utils
+run_cmd "cp ~/KDEPLASMA6-DOTFILES/KDE-desktop/plasma-org.kde.plasma.desktop-appletsrc ~/.config/"
+run_cmd "cp ~/KDEPLASMA6-DOTFILES/KDE-desktop/plasmashellrc ~/.config/"
+run_cmd "cp ~/KDEPLASMA6-DOTFILES/KDE-desktop/plasmoids ~/.local/share/plasma"
 
 #copy bashrc config file
-cp ~/KDEPLASMA6-DOTFILES/Applications/bashrc/.bashrc ~/
+run_cmd "cp ~/KDEPLASMA6-DOTFILES/Applications/bashrc/.bashrc ~/.bashrc"
 
-
-
-sudo reboot
+echo "Setup complete. Reboot required"
+read -rp "Reboot now? [y/N]: " reboot_now
+if [[ "$reboot_now" =~ ^[Yy]$ ]]; then
+    run_cmd "reboot"
+else
+    echo "Reboot skipped. Please reboot manually to apply all changes."
+fi

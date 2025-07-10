@@ -1,7 +1,6 @@
 linux-headers
 fastfetch
 ghostty
-opera
 spotify
 guitarix
 visual-studio-code-bin
