@@ -8,3 +8,4 @@ ttf-jetbrains-mono-nerd
 sddm
 zen-browser-bin
 blueman
+openrazer-daemon
