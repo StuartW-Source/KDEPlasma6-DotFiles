@@ -174,9 +174,6 @@ copy_and_verify "KDE Desktop" "$HOME/KDEPlasma6-DotFiles/KDE-desktop/" "$HOME/.c
 copy_and_verify "Plasmoids" "$HOME/KDEPlasma6-DotFiles/plasmoids" "$HOME/.local/share/plasma/plasmoids" "dir"
 copy_and_verify "Bashrc" "$HOME/KDEPlasma6-DotFiles/Applications/bashrc/.bashrc" "$HOME/.bashrc" "file"
 
-
-
-
 echo "Setup complete. Reboot required"
 read -rp "Reboot now? [y/N]: " reboot_now
 if [[ "$reboot_now" =~ ^[Yy]$ ]]; then
