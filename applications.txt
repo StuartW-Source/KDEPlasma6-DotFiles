@@ -9,3 +9,4 @@ sddm
 zen-browser-bin
 blueman
 openrazer-daemon
+mkinitcpio-firmware
