@@ -13,3 +13,8 @@ On the top task bar, going from left to right. System information widgets monito
 ![termial-image](/Images/Terminal.png)
 
 Fastfetch with custom system information layout. Cute cat and basic starship setup.
+
+To install;
+
+1. pull this repo to your user folder
+2. in terminal run "cd ~/KDEPlamsa6-DotFiles" "chmod +x install.sh" "./install.sh"
