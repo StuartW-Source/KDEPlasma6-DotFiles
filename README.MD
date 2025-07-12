@@ -1,4 +1,4 @@
-Welcome - This is not finished at all. please do not try this, as of now it is a work in progress
+Welcome - This is not fully tested yet, but the debugging of the script shows that it should work.
 
 ### Default Desktop
 
