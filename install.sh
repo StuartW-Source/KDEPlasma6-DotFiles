@@ -141,6 +141,11 @@ verify_copy() {
   local dest="$2"
   local label="$3"
 
+   if $DRY_RUN; then
+    echo "ℹ️  Skipping verification for $label due to dry run mode."
+    return 0
+  fi
+
   src="${src%/}" # Normalize path
   echo "🔍 Verifying copied files for $label..."
   local errors=0
@@ -184,7 +189,7 @@ verify_copy() {
   fi
 }
 
-# Enable verification
+# Enable verification - skip verification with --no-verify flag
 VERIFY=true
 
 # Run your copy_config tasks

@@ -18,3 +18,5 @@ To install;
 
 1. pull this repo to your user folder
 2. in terminal run "cd ~/KDEPlamsa6-DotFiles" "chmod +x install.sh" "./install.sh"
+
+Optional flags - --no-verify to skip file verification. --dry-run to run in dry mode, no changes will be made and verification will be skipped.
