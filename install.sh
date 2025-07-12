@@ -86,14 +86,19 @@ read_packages() {
 echo "📦 Installing git and paru..."
 run_cmd "sudo pacman -Syu --noconfirm git"
 
-if [[ ! -d "paru" ]]; then
-  run_cmd "git clone https://aur.archlinux.org/paru.git"
+# Set paru install location
+PARU_DIR="$HOME/paru"
+
+# Clone paru if not already present
+if [[ ! -d "$PARU_DIR" ]]; then
+  run_cmd "git clone https://aur.archlinux.org/paru.git \"$PARU_DIR\""
 fi
 
-if [[ -d "paru" ]]; then
-  cd paru || exit
+# Build and install paru
+if [[ -d "$PARU_DIR" ]]; then
+  pushd "$PARU_DIR" > /dev/null || exit
   run_cmd "makepkg -si --noconfirm"
-  cd ..
+  popd > /dev/null
 fi
 
 echo "✅ Paru installed."
