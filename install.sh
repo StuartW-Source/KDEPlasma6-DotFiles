@@ -7,10 +7,12 @@ if [[ "$1" == "--dry-run" ]]; then
   DRY_RUN=true
   echo "🧪 Dry run mode enabled. No changes will be made."
 fi
+
 VERBOSE=false
 for arg in "$@"; do
   [[ "$arg" == "--verbose" ]] && VERBOSE=true
 done
+
 # Helper to run or simulate commands
 run_cmd() {
   if $DRY_RUN; then
@@ -32,28 +34,29 @@ run_cmd() {
   fi
 }
 
-#install base-devel which is required for AUR managment
+# Install base-devel (required for AUR)
 run_cmd "sudo pacman -S --needed base-devel"
 
-#install nvidia drivers
-echo "installing nvidia drivers"
+# Install NVIDIA drivers
+echo "Installing NVIDIA drivers"
 run_cmd "sudo pacman -S nvidia-open nvidia-utils"
 
-#enable bluetooth to start on startup
-echo "enabling bluetooth on startup"
+# Enable Bluetooth on startup
+echo "Enabling Bluetooth on startup"
 run_cmd "sudo systemctl enable bluetooth"
 
-#Read packages function
+# Read packages function
 read_packages() {
   local file="$1"
   if [[ -f "$file" ]]; then
     tr '\n' ' ' < "$file"
   else
-    echo " Error: $file not found" >&2
+    echo "Error: $file not found" >&2
     exit 1
   fi
 }
 
+# Install git and paru
 echo "📦 Installing git and paru..."
 run_cmd "sudo pacman -Syu --noconfirm git"
 
@@ -69,49 +72,37 @@ fi
 
 echo "✅ Paru installed."
 
-#package list
-app=$(read_packages "applications.txt")
-FLATPAK_LIST="flatpaks.txt"
-
-#install packages
-for app in $app; do
+# Install packages from applications.txt
+app_list=$(read_packages "applications.txt")
+for app in $app_list; do
   if pacman -Qq "$app" &>/dev/null; then
-    echo " $app is already installed, skipping."
+    echo "✅ $app is already installed."
   else
     run_cmd "paru -S --noconfirm $app"
   fi
 done
 
-# Remote to install from (default is flathub)
+# Install Flatpaks from flatpaks.txt
+FLATPAK_LIST="flatpaks.txt"
 REMOTE="flathub"
 
-# Check if flatpaks.txt exists
 if [[ ! -f "$FLATPAK_LIST" ]]; then
-    echo "Error: $FLATPAK_LIST not found!"
-    exit 1
+  echo "Error: $FLATPAK_LIST not found!"
+  exit 1
 fi
 
-# Read each line in the file
 while IFS= read -r app_id || [[ -n "$app_id" ]]; do
-    # Skip empty lines or lines starting with #
-    [[ -z "$app_id" || "$app_id" =~ ^# ]] && continue
-
-    # Check if the app is already installed
-    if flatpak list --app --columns=application | grep -qx "$app_id"; then
-        echo "✅ $app_id is already installed."
-    else
-        echo "📦 Installing $app_id..."
-        run_cmd "flatpak install -y "$REMOTE" "$app_id""
-    fi
+  [[ -z "$app_id" || "$app_id" =~ ^# ]] && continue
+  if flatpak list --app --columns=application | grep -qx "$app_id"; then
+    echo "✅ $app_id is already installed."
+  else
+    echo "📦 Installing $app_id..."
+    run_cmd "flatpak install -y $REMOTE $app_id"
+  fi
 done < "$FLATPAK_LIST"
 
-#Configs copy#
-
-
-
-####Wallpaper Copy###
-
-echo "copying configuration files"
+# Copy and verify configs
+echo "🔧 Copying configuration files..."
 
 copy_config() {
   local name="$1"
@@ -123,13 +114,13 @@ copy_config() {
 
   if [[ "$is_dir" == "dir" && ! -d "$src" ]]; then
     echo "❌ $name - Source directory does not exist: $src"
-    return 1
+    return
   elif [[ "$is_dir" == "file" && ! -f "$src" ]]; then
     echo "❌ $name - Source file does not exist: $src"
-    return 1
+    return
   fi
 
-  run_cmd "mkdir -p \"$(dirname \"$dest\")\""
+  run_cmd "mkdir -p \"$(dirname "$dest")\""
 
   if [[ "$is_dir" == "dir" ]]; then
     run_cmd "mkdir -p \"$dest\""
@@ -138,8 +129,8 @@ copy_config() {
     run_cmd "cp \"$src\" \"$dest\""
   fi
 
-  if $VERIFY; then
-    verify_copy "$src" "$dest" "$name"
+  if [[ "$VERIFY" == true ]]; then
+    verify_copy "$src" "$dest" "$name" || true
   else
     echo "🔍 Verification skipped for $name."
   fi
@@ -150,18 +141,35 @@ verify_copy() {
   local dest="$2"
   local label="$3"
 
-  if $DRY_RUN; then
-    echo "ℹ️  Skipping verification for $label due to dry run mode."
-    return 0
-  fi
-
+  src="${src%/}" # Normalize path
   echo "🔍 Verifying copied files for $label..."
+  local errors=0
 
   if [[ -d "$src" ]]; then
-    if diff -r "$src" "$dest" > /dev/null; then
+    while IFS= read -r -d '' file; do
+      local relpath="${file#$src/}"
+      local destfile="$dest/$relpath"
+      if [[ ! -e "$destfile" ]]; then
+        echo "⚠️ $label - Missing file in destination: $relpath"
+        ((errors++))
+        continue
+      fi
+      if [[ -f "$file" ]]; then
+        local src_hash dest_hash
+        src_hash=$(sha256sum "$file" | awk '{print $1}')
+        dest_hash=$(sha256sum "$destfile" | awk '{print $1}')
+        if [[ "$src_hash" != "$dest_hash" ]]; then
+          echo "⚠️ $label - File content mismatch: $relpath"
+          ((errors++))
+        fi
+      fi
+    done < <(find "$src" -type f -print0)
+
+    if (( errors == 0 )); then
       echo "✅ $label - Directory copy verified."
     else
-      echo "⚠️ $label - Directory differs between $src and $dest."
+      echo "⚠️ $label - Verification failed with $errors mismatches."
+      return 1
     fi
   else
     local src_hash dest_hash
@@ -171,23 +179,27 @@ verify_copy() {
       echo "✅ $label - File copy verified."
     else
       echo "⚠️ $label - File copy content mismatch!"
+      return 1
     fi
   fi
 }
 
-# Run copy and config call
+# Enable verification
+VERIFY=true
+
+# Run your copy_config tasks
 copy_config "Wallpaper" "$HOME/KDEPlasma6-DotFiles/wallpaper" "$HOME/Pictures/wallpaper" "dir"
-copy_config "Fastfetch" "$HOME/KDEPlasma6-DotFiles/Applications/fastfetch/" "$HOME/.config/fastfetch" "dir"
+copy_config "Fastfetch" "$HOME/KDEPlasma6-DotFiles/Applications/fastfetch" "$HOME/.config/fastfetch" "dir"
 copy_config "Ghostty" "$HOME/KDEPlasma6-DotFiles/Applications/ghostty/config" "$HOME/.config/ghostty/config" "file"
 copy_config "Starship" "$HOME/KDEPlasma6-DotFiles/starship/starship.toml" "$HOME/.config/starship.toml" "file"
-copy_config "KDE Desktop" "$HOME/KDEPlasma6-DotFiles/KDE-desktop/" "$HOME/.config/" "dir"
+copy_config "KDE Desktop" "$HOME/KDEPlasma6-DotFiles/KDE-desktop" "$HOME/.config/" "dir"
 copy_config "Plasmoids" "$HOME/KDEPlasma6-DotFiles/plasmoids" "$HOME/.local/share/plasma/plasmoids" "dir"
 copy_config "Bashrc" "$HOME/KDEPlasma6-DotFiles/Applications/bashrc/.bashrc" "$HOME/.bashrc" "file"
 
-echo "Setup complete. Reboot required"
+echo "✅ Setup complete. Reboot required."
 read -rp "Reboot now? [y/N]: " reboot_now
 if [[ "$reboot_now" =~ ^[Yy]$ ]]; then
-    run_cmd "reboot"
+  run_cmd "reboot"
 else
-    echo "Reboot skipped. Please reboot manually to apply all changes."
+  echo "Reboot skipped. Please reboot manually to apply all changes."
 fi
