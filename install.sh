@@ -35,15 +35,41 @@ run_cmd() {
 }
 
 # Install base-devel (required for AUR)
-run_cmd "sudo pacman -S --needed base-devel"
+echo "📦 Checking base-devel..."
+if pacman -Qq base-devel &>/dev/null; then
+  echo "✅ base-devel is already installed."
+else
+  echo "📦 Installing base-devel..."
+  run_cmd "sudo pacman -S --needed base-devel"
+fi
 
 # Install NVIDIA drivers
-echo "Installing NVIDIA drivers"
-run_cmd "sudo pacman -S nvidia-open nvidia-utils"
+echo "📦 Checking NVIDIA drivers..."
+nvidia_packages=(nvidia-open nvidia-utils)
+nvidia_missing=false
+
+for pkg in "${nvidia_packages[@]}"; do
+  if ! pacman -Qq "$pkg" &>/dev/null; then
+    nvidia_missing=true
+    break
+  fi
+done
+
+if $nvidia_missing; then
+  echo "📦 Installing NVIDIA drivers..."
+  run_cmd "sudo pacman -S --needed ${nvidia_packages[*]}"
+else
+  echo "✅ NVIDIA drivers are already installed."
+fi
 
 # Enable Bluetooth on startup
-echo "Enabling Bluetooth on startup"
-run_cmd "sudo systemctl enable bluetooth"
+echo "🔧 Checking Bluetooth service..."
+if systemctl is-enabled bluetooth &>/dev/null; then
+  echo "✅ Bluetooth service already enabled."
+else
+  echo "🔧 Enabling Bluetooth on startup..."
+  run_cmd "sudo systemctl enable bluetooth"
+fi
 
 # Read packages function
 read_packages() {
