@@ -113,11 +113,11 @@ done < "$FLATPAK_LIST"
 
 echo "copying configuration files"
 
-copy_and_verify() {
+copy_config() {
   local name="$1"
   local src="$2"
   local dest="$3"
-  local is_dir="$4"  # "file" or "dir"
+  local is_dir="$4"
 
   echo "📁 Processing $name"
 
@@ -129,50 +129,60 @@ copy_and_verify() {
     return 1
   fi
 
-  run_cmd "mkdir -p \"$(dirname "$dest")\""
+  run_cmd "mkdir -p \"$(dirname \"$dest\")\""
 
   if [[ "$is_dir" == "dir" ]]; then
-    # Ensure the destination directory exists
     run_cmd "mkdir -p \"$dest\""
-    # Copy only contents, overwrite matching files
     run_cmd "cp -r \"$src\"/. \"$dest\"/"
   else
-    run_cmd "mkdir -p \"$(dirname "$dest")\""
     run_cmd "cp \"$src\" \"$dest\""
   fi
 
+  if $VERIFY; then
+    verify_copy "$src" "$dest" "$name"
+  else
+    echo "🔍 Verification skipped for $name."
+  fi
+}
+
+verify_copy() {
+  local src="$1"
+  local dest="$2"
+  local label="$3"
+
   if $DRY_RUN; then
-    echo "ℹ️  Skipping verification for $name due to dry run mode."
+    echo "ℹ️  Skipping verification for $label due to dry run mode."
     return 0
   fi
 
-  if [[ "$is_dir" == "dir" ]]; then
-    diff -r "$src" "$dest" > /dev/null
-    if [[ $? -eq 0 ]]; then
-      echo "✅ $name - Directory copy verified."
+  echo "🔍 Verifying copied files for $label..."
+
+  if [[ -d "$src" ]]; then
+    if diff -r "$src" "$dest" > /dev/null; then
+      echo "✅ $label - Directory copy verified."
     else
-      echo "⚠️ $name - Directory differs between $src and $dest."
+      echo "⚠️ $label - Directory differs between $src and $dest."
     fi
   else
-    local src_hash
-    local dest_hash
+    local src_hash dest_hash
     src_hash=$(sha256sum "$src" | awk '{print $1}')
     dest_hash=$(sha256sum "$dest" | awk '{print $1}')
     if [[ "$src_hash" == "$dest_hash" ]]; then
-      echo "✅ $name - File copy verified."
+      echo "✅ $label - File copy verified."
     else
-      echo "⚠️ $name - File copy content mismatch!"
+      echo "⚠️ $label - File copy content mismatch!"
     fi
   fi
 }
 
-copy_and_verify "Wallpaper" "$HOME/KDEPlasma6-DotFiles/wallpaper/" "$HOME/Pictures/wallpaper" "dir"
-copy_and_verify "Fastfetch" "$HOME/KDEPlasma6-DotFiles/Applications/fastfetch/" "$HOME/.config/fastfetch" "dir"
-copy_and_verify "Ghostty" "$HOME/KDEPlasma6-DotFiles/Applications/ghostty/config" "$HOME/.config/ghostty/config" "file"
-copy_and_verify "Starship" "$HOME/KDEPlasma6-DotFiles/starship/starship.toml" "$HOME/.config/starship.toml" "file"
-copy_and_verify "KDE Desktop" "$HOME/KDEPlasma6-DotFiles/KDE-desktop/" "$HOME/.config/" "dir"
-copy_and_verify "Plasmoids" "$HOME/KDEPlasma6-DotFiles/plasmoids" "$HOME/.local/share/plasma/plasmoids" "dir"
-copy_and_verify "Bashrc" "$HOME/KDEPlasma6-DotFiles/Applications/bashrc/.bashrc" "$HOME/.bashrc" "file"
+# Run copy and config call
+copy_config "Wallpaper" "$HOME/KDEPlasma6-DotFiles/wallpaper" "$HOME/Pictures/wallpaper" "dir"
+copy_config "Fastfetch" "$HOME/KDEPlasma6-DotFiles/Applications/fastfetch/" "$HOME/.config/fastfetch" "dir"
+copy_config "Ghostty" "$HOME/KDEPlasma6-DotFiles/Applications/ghostty/config" "$HOME/.config/ghostty/config" "file"
+copy_config "Starship" "$HOME/KDEPlasma6-DotFiles/starship/starship.toml" "$HOME/.config/starship.toml" "file"
+copy_config "KDE Desktop" "$HOME/KDEPlasma6-DotFiles/KDE-desktop/" "$HOME/.config/" "dir"
+copy_config "Plasmoids" "$HOME/KDEPlasma6-DotFiles/plasmoids" "$HOME/.local/share/plasma/plasmoids" "dir"
+copy_config "Bashrc" "$HOME/KDEPlasma6-DotFiles/Applications/bashrc/.bashrc" "$HOME/.bashrc" "file"
 
 echo "Setup complete. Reboot required"
 read -rp "Reboot now? [y/N]: " reboot_now
