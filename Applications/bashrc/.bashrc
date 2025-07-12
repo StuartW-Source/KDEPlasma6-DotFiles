@@ -12,3 +12,4 @@ PS1='[\u@\h \W]\$ '
 alias update='sudo pacman -Syu && flatpak update'
 
 fastfetch
+eval "$(starship init bash)"

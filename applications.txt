@@ -5,7 +5,10 @@ spotify
 visual-studio-code-bin
 ttf-jetbrains-mono-nerd
 sddm
-zen-browser
+zen-browser-bin
 blueman
 openrazer-daemon
+openrazer-meta
 mkinitcpio-firmware
+nextcloud-client
+starship
