@@ -4,3 +4,6 @@ io.github.giantpinkrobots.flatsweep
 org.gimp.GIMP
 org.gnome.gedit
 org.guitarix.Guitarix
+com.atlauncher.ATlauncher
+it.mijorus.gearlever
+net.lutris.Lutris

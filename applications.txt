@@ -12,3 +12,7 @@ openrazer-meta
 mkinitcpio-firmware
 nextcloud-client
 starship
+mesa
+discord
+vulkan-plugins
+coolercontrol

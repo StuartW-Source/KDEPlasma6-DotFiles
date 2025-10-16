@@ -43,23 +43,23 @@ else
   run_cmd "sudo pacman -S --needed base-devel"
 fi
 
-# Install NVIDIA drivers
-echo "📦 Checking NVIDIA drivers..."
-nvidia_packages=(nvidia-open nvidia-utils)
-nvidia_missing=false
+# Install AMD graphics drivers
+echo "📦 Checking AMD graphics drivers..."
+AMD_packages=(vulkan-radeon mesa-open)
+AMD_missing=false
 
-for pkg in "${nvidia_packages[@]}"; do
+for pkg in "${AMD_packages[@]}"; do
   if ! pacman -Qq "$pkg" &>/dev/null; then
-    nvidia_missing=true
+    AMD_missing=true
     break
   fi
 done
 
-if $nvidia_missing; then
-  echo "📦 Installing NVIDIA drivers..."
-  run_cmd "sudo pacman -S --needed ${nvidia_packages[*]}"
+if $AMD_missing; then
+  echo "📦 Installing AMD graphics drivers..."
+  run_cmd "sudo pacman -S --needed ${AMD_packages[*]}"
 else
-  echo "✅ NVIDIA drivers are already installed."
+  echo "✅ AMD graphics drivers are already installed."
 fi
 
 # Enable Bluetooth on startup
