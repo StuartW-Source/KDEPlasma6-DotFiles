@@ -16,3 +16,5 @@ starship
 discord
 coolercontrol
 tibia
+studio-one-7
+carla
