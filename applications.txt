@@ -4,6 +4,7 @@ ghostty
 spotify
 visual-studio-code-bin
 ttf-jetbrains-mono-nerd
+ttf-ms-fonts
 sddm
 zen-browser-bin
 blueman
@@ -12,7 +13,6 @@ openrazer-meta
 mkinitcpio-firmware
 nextcloud-client
 starship
-mesa
 discord
-vulkan-plugins
 coolercontrol
+tibia
